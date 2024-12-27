@@ -73,11 +73,12 @@ label {
     padding: 10px 5px;
 }
 
-.formularioBotones > button {
+.formularioBotones > button, input[type="submit"] {
     padding: 6px 3px;
     border: none;
     border-bottom: 1px solid black;
     border-radius: 6px;
     background-color: #13192C;
     color: white;
+    cursor: pointer;
 }

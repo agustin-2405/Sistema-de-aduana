@@ -66,6 +66,7 @@ input[type="search"] {
     background-color: #13192C;
     width: 130px;
     height: 44px;
+    cursor: pointer;
 }
 
 .botonMiArgentina:visited {
@@ -150,6 +151,7 @@ input[type="search"] {
     background-color: #13192C;
     width: 180px;
     height: 44px;
+    cursor: pointer;
 }
 
 /* Footer */
