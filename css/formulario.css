@@ -43,6 +43,11 @@
     font-size: 18px;
 }
 
+.formularioTitulo > h1 ~ h4 {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
 .formularioContenedor  {
     margin: auto;
     padding: 20px 5px;
@@ -73,7 +78,7 @@ label {
     padding: 10px 5px;
 }
 
-.formularioBotones > button, input[type="submit"] {
+.formularioBotones > button , input[type="submit"] {
     padding: 6px 3px;
     border: none;
     border-bottom: 1px solid black;
@@ -81,4 +86,17 @@ label {
     background-color: #13192C;
     color: white;
     cursor: pointer;
+}
+
+.enviarToggle {
+    display: none;
+}
+
+/* Estilo al formulario agregado con JavaScript */
+
+.formularioNuevo {
+    margin-bottom: 20px;
+    padding: 5px 0;
+    height: 400px;
+    border-radius: 6px;
 }

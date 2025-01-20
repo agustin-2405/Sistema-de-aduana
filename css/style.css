@@ -154,6 +154,10 @@ input[type="search"] {
     cursor: pointer;
 }
 
+.error {
+    color: red;
+}
+
 /* Footer */
 
 footer {
