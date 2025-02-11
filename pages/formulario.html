@@ -27,25 +27,27 @@
     <div class="formularioTitulo">
         <h1>FORMULARIO DE EGRESO</h1>
         <h2>Todos los datos deben ser identicos al Documento Nacional de identidad</h2>
-        <h4>*El regristro es de 2 personas máximo. En ese caso, hacer click en el botón 'Agregar persona'*</h4>
+        <h4>*El regristro es de 2 personas máximo. En ese caso, marcar el check*</h4>
     </div>
-    <form class="formularioContenedor">
+    <form class="formularioContenedor" id="persona-1">
         <label for="nombre">Nombre</label>
-        <input id="nombre" type="text" name="nombre" required>
+        <input id="nombre" type="text" name="nombre">
         <label for="apellido">Apellidos</label>
-        <input id="apellido" type="text" name="apellido" required>
+        <input id="apellido" type="text" name="apellido">
         <label for="documento">N° de documento</label>
-        <input id="documento" type="number" name="documento" min="6" required>
+        <input id="documento" type="number" name="documento" min="6">
         <label for="fechaNacimiento">Fecha de Nacimiento</label>
-        <input id="fechaNacimiento" type="date" name="fechaNacimiento" required>
+        <input id="fechaNacimiento" type="date" name="fechaNacimiento">
         <label for="destino">Lugar de destino</label>
-        <input id="destino" type="text" name="destino" required>
+        <input id="destino" type="text" name="destino">
         <div class="formularioBotones">
-            <input type="submit" class="agregarPersona" value="Agregar Persona">
-            <input type="submit" class="enviarFormulario" value="Enviar">
+            <label for="agregarPersona">¿Quieres agregar otra persona?</label>
+            <input type="checkbox" name="agregarPersona" id="">
+            <input type="submit" class="enviarFormulario enviarOriginal" value="Enviar">
         </div>
         <div class="codigoGenerado inputVacio"></div>
     </form>
+    <form class="formularioNuevo"></form>
     <script src="../js/main.js"></script>
     <script src="../js/datosFormulario.js"></script>
 </body>

@@ -1,26 +1,39 @@
 document.querySelector('.formularioContenedor').addEventListener('submit' , function (event) {
     event.preventDefault()
-    crearTablaDatos()
-})
+    const datosFormulario = {
+        nombre: document.querySelector('#nombre').value,
+        apellido: document.querySelector('#apellido').value,
+        documento: document.querySelector('#documento').value,
+        fechaNacimiento: document.querySelector('#fechaNacimiento').value,
+        destino: document.querySelector('#destino').value
+    };
+    let datosGuardados = JSON.parse(localStorage.getItem('datosFormulario')) || [];
+    datosGuardados.push(datosFormulario);
+    localStorage.setItem('datosFormulario', JSON.stringify(datosGuardados));
+    crearTablaDatos([datosFormulario]);
+});
 
-function crearTablaDatos () {
-    const nombre = document.querySelector('#nombre').value
-    const apellido = document.querySelector('#apellido').value
-    const documento = document.querySelector('#documento').value
-    const fechaNacimiento = document.querySelector('#fechaNacimiento').value
-    const destino = document.querySelector('#destino').value
+document.addEventListener('DOMContentLoaded', function() {
+    const datosFormulario = JSON.parse(localStorage.getItem('datosFormulario'));
+    if (datosFormulario) {
+        crearTablaDatos(datosFormulario);
+    }
+});
 
-    const tabla = document.querySelector('#tablaDatos');
-    const fila = tabla.insertRow();
-    const celdaNombre = fila.insertCell();
-    const celdaApellido = fila.insertCell();
-    const celdaDocumento = fila.insertCell();
-    const celdaFechaNacimiento = fila.insertCell();
-    const celdaDestino = fila.insertCell();
+function crearTablaDatos(datos) {
+    const tabla = document.querySelector('#tablaDatos tbody');
+    datos.forEach(dato => {
+        const fila = tabla.insertRow();
+        const celdaNombre = fila.insertCell();
+        const celdaApellido = fila.insertCell();
+        const celdaDocumento = fila.insertCell();
+        const celdaFechaNacimiento = fila.insertCell();
+        const celdaDestino = fila.insertCell();
 
-    celdaNombre.textContent = nombre;
-    celdaApellido.textContent = apellido;
-    celdaDocumento.textContent = documento;
-    celdaFechaNacimiento.textContent = fechaNacimiento;
-    celdaDestino.textContent = destino;
+        celdaNombre.textContent = dato.nombre;
+        celdaApellido.textContent = dato.apellido;
+        celdaDocumento.textContent = dato.documento;
+        celdaFechaNacimiento.textContent = dato.fechaNacimiento;
+        celdaDestino.textContent = dato.destino;
+    });
 }
